@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:id="@+id/v_border"
+        android:layout_width="@dimen/sw_300dp"
+        android:layout_height="@dimen/sw_300dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/sw_12dp"
+        android:layout_marginTop="@dimen/sw_20dp"
+        android:text="蓝牙列表"
+        android:textSize="@dimen/sw_20dp"
+        app:layout_constraintBottom_toTopOf="@id/rv_bluetooth"
+        app:layout_constraintLeft_toLeftOf="@id/v_border"
+        app:layout_constraintTop_toTopOf="@id/v_border" />
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10s"
+        android:textSize="@dimen/sw_20dp"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/sw_8dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintRight_toRightOf="@id/v_border"
+        app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+
+    <ImageView
+        android:id="@+id/tv_retry"
+        android:layout_width="@dimen/sw_33dp"
+        android:layout_height="@dimen/sw_33dp"
+        android:src="@drawable/retry_24"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/sw_6dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintRight_toRightOf="@id/v_border"
+        app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bluetooth"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/sw_20dp"
+        android:layout_marginTop="@dimen/sw_8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@id/v_border"
+        app:layout_constraintLeft_toLeftOf="@id/v_border"
+        app:layout_constraintRight_toRightOf="@id/v_border"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:listitem="@layout/item_bluetooth" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
